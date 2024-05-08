@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<head>
+<h2> The Human Heart</h2>
+<h4>Label the diagram given below.<br>Check your answes by clicking on letters.Green color shows a correct answer.</h4>
+</head>
+<body>
+
+
+
+<p> <img src="heart1.png" id="mm"style="backgound-color:#DB34; margin-top:-10%;margin-left:30%;position:absolute;"></p>
+
+
+
+
+<div class ="bB" id ="fI" style="color:rgb(21, 255, 0); padding-left:29px;">
+<input id ="n2"type ="text"style="padding-left:29px; border:solid;color:blue;"/>
+<button   onclick="nA()"style="border:solid;color:blue;margin-left:-20%;">A</button><br>
+
+<input id ="n3" type ="text"style="padding-left:29px; border:solid;color:blue;"/>
+<button onclick="nB()"style="border:solid;color:blue;margin-top:1em;margin-left:-20%;">B</button><br>
+
+<input id ="n4" type ="text"style="border:solid;color:blue;padding-left:29px;"/>
+<button onclick="nC()"style="border:solid;color:blue;margin-top:1em;margin-left:-20%;">C</button><br>
+
+<input id ="n5" type ="text"style="border:solid;color:blue;padding-left:29px;"/>
+<button onclick="nD()"style="border:solid;color:blue;margin-top:1em;margin-left:-20%;">D</button><br>
+
+<input id ="n6" type ="text"style="border:solid;color:blue;padding-left:29px;"/>
+<button onclick="nE()"style="border:solid;color:blue;margin-top:1em;margin-left:-20%;">E</button><br>
+
+<input id ="n7" type ="text"style="border:solid;color:blue;padding-left:29px;"/>
+<button onclick="nF()"style="border:solid;color:blue;margin-top:1em;margin-left:-20%;">F</button><br>
+
+<input id ="n8" type ="text"style="border:solid;color:blue;padding-left:29px;"/>
+<button onclick="nG()"style="border:solid;color:blue;margin-top:1em;margin-left:-20%;17%;">G</button><br>
+
+<input id ="n9" type ="text"style="border:solid;color:blue;padding-left:29px;"/>
+<button onclick="nH()"style="border:solid;color:blue;margin-top:1em;margin-left:-20%;17%;">H</button><br>
+
+<input id ="n10" type ="text"style="border:solid;color:blue;padding-left:29px;"/>
+<button onclick="nI()"style="border:solid;color:blue;margin-top:1em;margin-left:-20%;">I</button><br>
+
+<input id ="n11" type ="text"style="border:solid;color:blue;padding-left:29px;"/>
+<button onclick="nJ()"style="border:solid;color:blue;margin-top:1em;margin-left:-20%;">J</button><br>
+
+<input id ="n12" type ="text"style="border:solid;color:blue;padding-left:29px;"/>
+<button onclick="nK()"style="border:solid;color:blue;margin-top:1em;margin-left:-20%;">K</button><br>
+
+<input id ="n13" type ="text"style="border:solid;color:blue;padding-left:29px;"/>
+<button onclick="nL()"style="border:solid;color:blue;margin-top:1em;margin-left:-20%;">L</button><br>
+
+
+</div>
+
+<p id="pic1">vena cava,pulmonary valve,right atrium,right ventrical,inferior vena cava,aorta, pulmonary artery,
+         <br>pulmonary vein, left atrium,right atrium, right ventricle, septum, descending aorta</p>
+<button id="pic1" onclick="nIM()">answers</button>
+
+
+
+
+<style>
+
+
+
+
+.bB{width;40vw;display:flex:left;position:relative;margin-top:5%;}
+
+
+
+
+</style>
+</body>
+
+<script>
+let iMm=document.querySelector("#iMm");
+let fIrst= document.querySelector("#fIrst");
+let sEcond= document.querySelector("#sEcond");
+let sE= document.querySelector("#sE");
+let fI= document.querySelector("#fI");
+let pic1=document.querySelector("#pic1");
+
+
+
+let n2=document.querySelector("#n2");
+let n3=document.querySelector("#n3");
+let n4=document.querySelector("#n4");
+let n5=document.querySelector("#n5");
+let n6=document.querySelector("#n6");
+let n7=document.querySelector("#n7");
+let n8=document.querySelector("#n8");
+let n9=document.querySelector("#n9");
+let n10=document.querySelector("#n10");
+let n11=document.querySelector("#n11");
+let n12=document.querySelector("#n12");
+let n13=document.querySelector("#n13");
+
+
+
+
+
+list1 = ["vena cava","pulmonary valve","right atrium","right ventrical","inferior vena cava","aorta", "pulmonary artery",
+         "pulmonary vein", "left atrium","right atrium", "right ventricle", "septum", "descending aorta"]
+
+ let a=list1[0];
+ let b=list1[1];
+ let c=list1[2];
+ let d=list1[3];
+ let e=list1[4];
+ let f=list1[5];
+ let g=list1[6];
+ let h=list1[7];
+ let i=list1[8];
+ let j=list1[9];
+ let k=list1[10];
+ let l=list1[11];
+pic1.style.display="none";
+
+sE.style.display="none"; 
+
+
+
+function nIM(){
+
+pic1.style.display ="block";
+sE.style.display ="none";
+}
+
+
+
+function nA(){
+
+n2.innerHTML= a;
+
+if(n2.value ==a)
+ {
+ n2.style.color="green";
+ }else  {
+ n2.style.color="red";
+ }
+ 
+}
+function nB(){
+n3.innerHTML= b;
+if(n3.value ==b)
+ {
+ n3.style.color="green";
+ }else  {
+ n3.style.color="red";
+ }
+}
+function nC(){
+n4.innerHTML= c;
+if(n4.value ==c)
+ {
+        n4.style.color="green";
+ }else  {
+ n4.style.color="red";
+ }
+}
+function nD(){
+n5.innerHTML= d;
+if(n5.value ==d)
+ {
+        n5.style.color="green";
+ }else  {
+ n5.style.color="red";
+ }
+}
+function nE(){
+n6.innerHTML= e;
+if(n6.value ==e)
+ {
+        n6.style.color="green";
+ }else  {
+ n6.style.color="red";
+ }
+}
+
+function F(){
+n7.innerHTML= f;
+if(n7.value ==f)
+ {
+        n7.style.color="green";
+ }else  {
+ n7.style.color="red";
+ }
+}
+function nG(){
+n8.innerHTML= g;
+if(n8.value ==g)
+ {
+        n8.style.color="green";
+ }else  {
+ n8.style.color="red";
+ }
+}
+
+function nH(){
+n9.innerHTML= h;
+if(n9.value ==h)
+ {
+        n9.style.color="green";
+ }else  {
+ n9.style.color="red";
+ }
+}
+
+function nI(){
+n10.innerHTML= i;
+if(n10.value ==i)
+ {
+        n10.style.color="green";
+ }else  {
+ n10.style.color="red";
+ }
+
+}
+function nJ(){
+n11.innerHTML= j;
+if(n11.value ==j)
+ {
+ an11.style.color="green";
+ }else  {
+ n11.style.color="red";
+ }
+}
+ function nK(){
+n12.innerHTML= k;
+if(n12.value ==k)
+ {
+        n12.style.color="green";
+ }else  {
+ n12.style.color="red";
+ }
+ }
+function nL(){
+n13.innerHTML= l;
+if(n13.value ==l)
+ {
+        n13.style.color="green";
+ }else  {
+ n13.style.color="red";
+ }
+}
+</script>
+
+
+
+</html>
