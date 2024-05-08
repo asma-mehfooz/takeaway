@@ -1,0 +1,298 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Blood circulatory system</title>
+    
+    
+  </head>
+ 
+  <body>
+    
+    <p>Drag and drop the items into their corresponding spots</p>
+    
+  
+    <ul class="draggable-list" id="draggable-list">
+     </ul>
+    <button class="check-btn" id="check">
+      Check Order
+      <i class="fas fa-paper-plane"></i>
+    </button>
+ 
+<ul class="n-list">
+ <li>vessels that carry blood away from the heart to body organs.</li>
+<li>microscopic vessels that connect between the arteries and veins.</li>
+<li>that return blood to the heart.</li>
+<li> that supply oxygen-poor blood from the heart to the lungs.</li>
+<li>that bring oxygen-rich blood from the lungs to the heart.</li>
+<li>transports blood from the alimentary canal to the liver. </li> 
+<li>consists of an anterior branch which returns blood from the head and arms to the heart and a posterior branch.</li>
+<li>collects blood from the posterior parts of the body.</li>
+<li>is the  main trunk of the arterial system in the body.</li> </ul>
+   
+<style>
+:root {
+  --background-color: none;
+  --text-color: #b9df11;
+}
+
+* {
+  box-sizing: border-box;
+  
+}
+
+body {
+  background-color: #fffd;
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 80%;
+  margin:0;
+  font-family: 'Lato', sans-serif;
+}
+
+.draggable-list {
+
+  display:flex;
+  list-style-type:lower-alpha;color: #000;
+  width:94%;height:7%;
+ margin-top:44%;margin-left:4%;
+ position:absolute; 
+}
+ 
+
+.draggable-list li {
+  background-color: #fff;
+  border: solid 3em #e9eff0f6;
+  flex:left;
+ 
+  font-size: 12px;
+  height:5%;
+  width: 15%;
+  flex-direction:columns;
+  position:relative;
+  
+  font:12px;color:rgb(95, 87, 87);
+  margin-top:-40%;
+
+}
+.draggable-list li:not(:last-of-type) {
+  
+}
+
+.draggable-list li:nth-child(1){
+padding-bottom:0%;
+ list-style-type:lower-alpha;padding-left:2%;
+
+}
+
+
+*/.draggable-list .number {
+  background-color: var(--background-color);
+  flex:center;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  height:5px;
+  width: 5px;
+  flex-direction:columns;
+  border:1px;color:rgb(95, 85, 85);
+  padding-left:1em;padding-right:1em;
+}*/
+
+.draggable-list li.over .draggable {
+  background-color: hsl(0, 100%, 98%);
+}
+
+.draggable-list .person-name {
+  margin: 0 0 0 0;
+}
+
+.draggable-list li.right .person-name {
+  color: rgb(49, 187, 36);
+}
+
+.draggable-list li.wrong .person-name {
+  color: #ff3838;
+}
+
+.draggable {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+ font:12px;color:black;
+  padding-right:3%;padding-left:0%
+  flex: 1;
+}
+.n-list {
+  
+ list-style-type:lower-alpha;
+  position:relative;
+  width:30%;height:12%;
+  padding-right:0%;
+  margin-top:9%;
+  margin-left:2%;
+}
+.check-btn {
+  background-color: rgb(204, 204, 226);
+  border: none;
+  color: black;
+  font-size: 16px;
+  padding: 1% 2%;
+  cursor: pointer;
+  position:relative;
+}
+
+.check-btn:active {
+  transform: scale(0.98);
+}
+
+.check-btn:focus {
+  outline: none;
+}
+</style>
+ </body>
+<script>
+
+
+
+const draggable_list = document.getElementById('draggable-list');
+const column_list = document.getElementById('column-list');
+const check= document.getElementById('check');
+
+const partsAnimal = [
+ 'Arteries',
+'Capillaries',
+'Veins',
+'Pulmonary arteries',
+ 'Pulmonary veins', 
+'Vena cava', 
+'Posterior vena cava',
+'Aorta',
+'Hepatic portal vein',
+      
+];
+
+
+
+// Store listitems
+const listItems = [];
+
+let dragStartindex;
+
+createList();
+
+// Insert list items into DOM
+
+ function createList() {
+  [...partsAnimal]
+   .map(a => ({ value: a, sort: Math.random() }))
+    .sort((a, b) => a.sort - b.sort)
+    .map(a => a.value)
+
+         .forEach((person,index) => {
+      const listItem = document.createElement('li');
+
+      listItem.setAttribute('data-index', index);
+
+      listItem.innerHTML = `
+        
+        <div class="draggable" draggable="true">
+          <span class="list-style-type"style="padding-left:3%;font-color:red;"></span>    
+        <p class="person-name">${person}</p>
+        
+          <i class="fas fa-grip-lines"></i>
+        </div>
+      `;
+
+      listItems.push(listItem);
+
+      draggable_list.appendChild(listItem);
+    }); 
+
+  addEventListeners();
+}
+
+function dragStart() {
+  // console.log('Event: ', 'dragstart');
+  dragStartIndex = +this.closest('li').getAttribute('data-index');
+}
+
+function dragEnter() {
+  // console.log('Event: ', 'dragenter');
+  this.classList.add('over');
+}
+
+function dragLeave() {
+  // console.log('Event: ', 'dragleave');
+  this.classList.remove('over');
+}
+
+function dragOver(e) {
+  // console.log('Event: ', 'dragover');
+  e.preventDefault();
+}
+
+function dragDrop() {
+  // console.log('Event: ', 'drop');
+  const dragEndIndex = +this.getAttribute('data-index');
+  swapItems(dragStartIndex, dragEndIndex);
+
+  this.classList.remove('over');
+}
+
+// Swap list items that are drag and drop
+function swapItems(fromIndex, toIndex) {
+  const itemOne = listItems[fromIndex].querySelector('.draggable');
+  const itemTwo = listItems[toIndex].querySelector('.draggable');
+
+  listItems[fromIndex].appendChild(itemTwo);
+  listItems[toIndex].appendChild(itemOne);
+}
+
+// Check the order of list items
+function checkOrder() {
+  listItems.forEach((listItem, index) => {
+    const personName = listItem.querySelector('.draggable').innerText.trim();
+
+    if (personName !==partsAnimal[index]) {
+      listItem.classList.add('wrong');
+    } else {
+      listItem.classList.remove('wrong');
+      listItem.classList.add('right');
+    }
+  });
+}
+
+function addEventListeners() {
+  const draggables = document.querySelectorAll('.draggable');
+  const dragListItems = document.querySelectorAll('.draggable-list li');
+
+  draggables.forEach(draggable => {
+    draggable.addEventListener('dragstart', dragStart);
+  });
+
+  dragListItems.forEach(item => {
+    item.addEventListener('dragover', dragOver);
+    item.addEventListener('drop', dragDrop);
+    item.addEventListener('dragenter', dragEnter);
+    item.addEventListener('dragleave', dragLeave);
+  });
+}
+
+check.addEventListener('click', checkOrder);
+
+
+
+</script>
+
+</html>
+
+
+
